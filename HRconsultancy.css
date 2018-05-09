@@ -1,0 +1,306 @@
+/*
+properties that alter z-index:
+  - opacity,
+  - filter: grayscale,
+  - transform)
+  - position: relative / absolute
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+/*  border: 1px solid blue;
+  border-radius: 10px;
+*/font-family: 'Alegreya', serif;
+  color: #555;
+  text-align: left;
+}
+
+h1 {
+  font-size: 60px;
+  color: #333;
+}
+
+h2 {
+  font-size: 35px;
+  color: #444;
+}
+
+h3 {
+  font: bold 24px 'Alegreya', serif;
+  color: #555;
+}
+
+p {
+  font-size: 20px;
+}
+
+/* HEADER */
+
+header {
+  height: 100vh;
+  background-image: radial-gradient(#fff, #e0e0e0);
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  background: linear-gradient(rgba(220,220,220,1), rgba(230,230,230,0.75));
+  padding: 15px;
+  transition: top 0.5s;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 650px;
+  list-style: none;
+  color: #555;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#menu {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-around;
+  top: 15px;
+  right: 20px;
+  align-items: center;
+  height: 20px;
+  border-radius: 20px;
+}
+
+#menu:hover {
+  cursor: pointer;
+}
+
+.revealed {
+  top: 0;
+}
+
+.menuBar {
+  height: 2px;
+  width: 25px;
+  border-radius: 2px;
+  background: #777;
+}
+
+#headerContent {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  max-width: 900px;
+  margin: auto;
+}
+
+#headerContent > * {
+  display: inline-block;
+  overflow: hidden;
+  margin: 20px 50px;
+}
+
+#headerContent img {
+  flex: 1;
+  position: relative;
+  vertical-align: top;
+  margin-top: 20px;
+}
+
+#headerText {
+  flex: 2;
+}
+
+#headerText * {
+  font-family: 'Alegreya', serif;
+  font-weight: normal;
+  margin: 30px 0;
+}
+
+#headerText h2 {
+  line-height: 40px;
+
+}
+
+#headerText h2 span {
+  display: block;
+  margin: 0;
+}
+
+#headerText p {
+  font-size: 20px;
+  color: #555;
+}
+
+#filter {
+  height: 100%;
+  width: 100%;
+}
+
+/* ABOUT */
+
+#aboutContent {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  overflow: hidden;
+  max-width: 900px;
+  margin: auto;
+}
+#aboutContent div {
+  flex: 2;
+}
+
+#aboutContent img {
+  flex: 1;
+}
+
+#aboutText h2 {
+  font-weight: normal;
+}
+
+#aboutText > * {
+  margin: 30px 0;
+}
+
+/* TESTIMONIALS */
+
+#testimonials ul {
+  display: flex;
+
+}
+
+#testimonials ul * {
+  flex: 1;
+  margin: 10px auto;
+  padding: 20px;
+  list-style: none;
+}
+
+#testimonials li > * {
+  box-shadow: 1px 1px 10px -7px;
+}
+
+.avatar {
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+}
+
+#testimonials li:first-child div {
+  background: url('images/avatar1.jpg') no-repeat 53% 10%;
+  background-size: 350%;
+}
+
+#testimonials li:nth-child(2) div {
+  background: url('images/avatar3.jpg') no-repeat 45% 5%;
+  background-size: 180%;
+}
+
+#testimonials li:last-child div {
+  background: url('images/avatar2.jpg') no-repeat 53% 10%;
+  background-size: cover;
+}
+
+blockquote {
+
+  font-family: "Lato", Arial;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+#contact {
+  position: relative;
+  background: url('images/contact.png') no-repeat 100%;
+  background-size: cover;
+  z-index: -2;
+}
+
+#contact form {
+  max-width: 900px;
+  margin: auto;
+}
+
+#filt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: #fff;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+form {
+  overflow: hidden;
+
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #000;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 10px -8px;
+  border-radius: 5px;
+  opacity: 0.75;
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="submit"] {
+  width: initial;
+  float: right;
+  padding: 5px 20px;
+}
+
+/*
+blockquote::before {
+  content: open-quote;
+  font: normal 40px/0 'Revalia', cursive;
+  color: #999;
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+blockquote::after {
+  content: close-quote;
+  font: normal 40px/0 'Revalia', cursive;
+  color: #999;
+  position: absolute;
+  right: 30px;
+}
+*/
+
+footer, section {
+  margin: 10px;
+  padding: 40px 20px;
+  background-image: radial-gradient(#fff, #eee);
+}
+
+footer {
+  height: 300px;
+  background: #111;
+}
+
+section > * {
+  margin-bottom: 30px;
+}
+
+section > *:last-child {
+  margin-bottom: 0;
+}
